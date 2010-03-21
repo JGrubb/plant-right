@@ -952,3 +952,251 @@ Rendering template within layouts/application
 Rendering user_sessions/new
   [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:15:51') [0m
 Completed in 97ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:27:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:17:38') [0m
+Completed in 22ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:29:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:19:56') [0m
+Completed in 25ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:31:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:21:20') [0m
+Completed in 20ms (View: 8, DB: 1) | 200 OK [http://localhost/user_session/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-21 13:31:20) [GET]
+
+ActionController::RoutingError (No route matches "/user_session/images/spreadTheWord.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-21 13:31:20) [GET]
+
+ActionController::RoutingError (No route matches "/user_session/images/photo_CalifLandscape1.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:31:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:21:22') [0m
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-21 13:35:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (1.4ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:25:46') [0m
+Completed in 26ms (View: 15, DB: 1) | 200 OK [http://localhost/account/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-21 13:35:46) [GET]
+
+ActionController::RoutingError (No route matches "/account/images/spreadTheWord.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-21 13:35:46) [GET]
+
+ActionController::RoutingError (No route matches "/account/images/photo_CalifLandscape1.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-21 13:36:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (1.5ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:26:22') [0m
+Completed in 28ms (View: 15, DB: 1) | 200 OK [http://localhost/account/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-21 13:36:22) [GET]
+
+ActionController::RoutingError (No route matches "/account/images/photo_CalifLandscape1.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-21 13:36:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (1.4ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:26:30') [0m
+Completed in 26ms (View: 14, DB: 1) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-21 13:37:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (1.4ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:27:01') [0m
+Completed in 96ms (View: 83, DB: 1) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-21 13:37:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (1.5ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:27:03') [0m
+Completed in 22ms (View: 10, DB: 1) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-21 13:37:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (1.5ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:27:22') [0m
+Completed in 23ms (View: 10, DB: 1) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-21 13:37:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (73.7ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:27:24') [0m
+Completed in 94ms (View: 82, DB: 1) | 200 OK [http://localhost/account/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:37:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:27:53') [0m
+Completed in 20ms (View: 8, DB: 1) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:38:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:28:06') [0m
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:38:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:28:26') [0m
+Completed in 20ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:43:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:33:01') [0m
+Completed in 104ms (View: 10, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:43:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:33:58') [0m
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:45:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:35:52') [0m
+Completed in 26ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:53:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:43:39') [0m
+Completed in 123ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:53:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:43:44') [0m
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:53:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:43:52') [0m
+Completed in 20ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:54:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:44:06') [0m
+Completed in 25ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:54:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:44:10') [0m
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:54:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:44:47') [0m
+Completed in 20ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-21 13:54:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (1.5ms)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:44:50') [0m
+Completed in 23ms (View: 10, DB: 1) | 200 OK [http://localhost/account/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-21 13:54:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 17:44:52') [0m
+Completed in 20ms (View: 8, DB: 1) | 200 OK [http://localhost/user_session/new]
