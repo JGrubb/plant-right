@@ -1,0 +1,199 @@
+# Logfile created on Sat Mar 20 21:10:32 -0400 2010  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (66.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (31.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20081103171327)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "login" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "current_login_at" datetime, "last_login_ip" varchar(255), "current_login_ip" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20081103171327')[0m
+Migrating to CreateSessions (20081106072031)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20081106072031')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("sessions")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_last_request_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_persistence_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-20 21:11:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 01:01:08') [0m
+Completed in 250ms (View: 185, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-20 21:11:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.7ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 01:01:16') [0m
+Completed in 185ms (View: 173, DB: 1) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-20 21:11:28) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"jgrubb"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'jgrubb') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'f00b1baca2e234dfdc8bb950b930530ab034afdc522ccf900ac5f0dec90a9e4ba63c587ca4a7f5dd6d512a7836544387b7d01e7a52c784c558553c9806d0c67b') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("created_at", "last_request_at", "crypted_password", "updated_at", "current_login_ip", "password_salt", "current_login_at", "persistence_token", "login_count", "last_login_ip", "login", "last_login_at") VALUES('2010-03-21 01:11:28', '2010-03-21 01:11:28', '630f3ebe1525bf52b6943887a12fe7d5b464f6b8d907db7c4b6ab7ceca0c48586ef6883bbb0e839aaabae60e97b32653d5a62b013793783da4fc93712a56d3af', '2010-03-21 01:11:28', '127.0.0.1', 'Nc0ImYYywHjH1mFYkCeb', '2010-03-21 01:11:28', 'f00b1baca2e234dfdc8bb950b930530ab034afdc522ccf900ac5f0dec90a9e4ba63c587ca4a7f5dd6d512a7836544387b7d01e7a52c784c558553c9806d0c67b', 1, NULL, 'jgrubb', NULL)[0m
+Redirected to http://localhost:3000/account
+Completed in 690ms (DB: 1) | 302 Found [http://localhost/account]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-20 21:11:29) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'f00b1baca2e234dfdc8bb950b930530ab034afdc522ccf900ac5f0dec90a9e4ba63c587ca4a7f5dd6d512a7836544387b7d01e7a52c784c558553c9806d0c67b') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-21 01:11:29', "last_request_at" = '2010-03-21 01:11:29' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 01:01:29') [0m
+Completed in 47ms (View: 23, DB: 2) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-20 21:11:50) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'f00b1baca2e234dfdc8bb950b930530ab034afdc522ccf900ac5f0dec90a9e4ba63c587ca4a7f5dd6d512a7836544387b7d01e7a52c784c558553c9806d0c67b') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-21 01:11:50', "last_request_at" = '2010-03-21 01:11:50' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 01:01:50') [0m
+Completed in 29ms (View: 7, DB: 2) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-03-20 21:11:53) [GET]
+  Parameters: {"action"=>"edit", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'f00b1baca2e234dfdc8bb950b930530ab034afdc522ccf900ac5f0dec90a9e4ba63c587ca4a7f5dd6d512a7836544387b7d01e7a52c784c558553c9806d0c67b') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-21 01:11:53', "last_request_at" = '2010-03-21 01:11:53' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (1.8ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 01:01:53') [0m
+Completed in 142ms (View: 39, DB: 2) | 200 OK [http://localhost/account/edit]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-20 21:11:58) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'f00b1baca2e234dfdc8bb950b930530ab034afdc522ccf900ac5f0dec90a9e4ba63c587ca4a7f5dd6d512a7836544387b7d01e7a52c784c558553c9806d0c67b') LIMIT 1[0m
+  [4;35;1mUser Update (1.1ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-21 01:11:58', "last_request_at" = '2010-03-21 01:11:58' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/user_session/new
+Completed in 22ms (DB: 2) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-20 21:11:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 01:01:58') [0m
+Completed in 24ms (View: 10, DB: 1) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-20 21:12:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 01:02:49') [0m
+Completed in 20ms (View: 7, DB: 1) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-20 21:12:59) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"1", "password"=>"[FILTERED]", "login"=>"jgrubb"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'jgrubb') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "login_count" = 2, "updated_at" = '2010-03-21 01:12:59', "last_request_at" = '2010-03-21 01:12:59', "last_login_at" = '2010-03-21 01:11:28', "last_login_ip" = '127.0.0.1', "current_login_at" = '2010-03-21 01:12:59' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/account
+Completed in 353ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-20 21:12:59) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-21 01:12:59', "last_request_at" = '2010-03-21 01:12:59' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 01:02:59') [0m
+Completed in 29ms (View: 6, DB: 2) | 200 OK [http://localhost/account]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-20 22:36:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (1.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-21 02:36:33', "last_request_at" = '2010-03-21 02:36:33' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 46ms (DB: 3) | 302 Found [http://localhost/]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-20 22:36:33) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-21 02:36:33', "last_request_at" = '2010-03-21 02:36:33' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 02:26:33') [0m
+Completed in 30ms (View: 7, DB: 2) | 200 OK [http://localhost/account]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-20 22:45:17) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-21 02:45:17', "last_request_at" = '2010-03-21 02:45:17' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 378ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-20 22:45:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 02:35:17') [0m
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-20 22:55:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (1.4ms)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 02:45:05') [0m
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://localhost/account/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-20 23:10:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 03:00:10') [0m
+Completed in 20ms (View: 7, DB: 1) | 200 OK [http://localhost/user_session/new]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-20 23:10:16) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"wilson"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'wilson') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" WHERE (last_request_at > '2010-03-21 03:00:16') [0m
+Completed in 22ms (View: 8, DB: 1) | 200 OK [http://localhost/user_session]
