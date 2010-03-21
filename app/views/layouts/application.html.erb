@@ -5,13 +5,53 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%= controller.controller_name %>: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'style' %>
   <%= javascript_include_tag :defaults %>
 </head>
-<body>
+<body id="homepage"><a name="top"></a>
+	
+	<div id="container"> 
 
-<span style="float: right; text-align: right;"><%= link_to "Source code", "http://github.com/binarylogic/authlogic_example" %> | <%= link_to "Setup tutorial", "http://www.binarylogic.com/2008/11/3/tutorial-authlogic-basic-setup" %> | <%= link_to "Password reset tutorial", "http://www.binarylogic.com/2008/11/16/tutorial-reset-passwords-with-authlogic" %><br />
-<%= link_to "OpenID tutorial", "http://www.binarylogic.com/2008/11/21/tutorial-using-openid-with-authlogic" %> | <%= link_to "Authlogic Repo", "http://github.com/binarylogic/authlogic" %> | <%= link_to "Authlogic Doc", "http://authlogic.rubyforge.org/" %></span>
+		<div id="left"> 
+
+			<div id="logo"> 
+			<%= link_to image_tag("PlantRightLogo.gif"), root_url %> 
+			</div> 
+
+
+			<div id="leftnav"> 
+			<ul>
+				<li><a href="definitions/">What are invasive plants?</a></li> 
+				<li><a href="plants/">Regional invasive and alternative plants</a></li> 
+				<li><a href="whattodo/">What you can do</a></li> 
+				<li><a href="benefits/">Benefits of Planting Right</a></li> 
+				<li><a href="questions/">FAQ</a></li> 
+				<li><a href="testimonials/">Testimonials</a></li> 
+				<li><a href="watergardens/">Water gardens</a></li> 
+				<li><a href="research/">Research</a></li> 
+				<li><a href="library/">Library</a></li> 
+				<li><a href="news/">News</a></li> 
+				<li><a href="about/">About us</a></li> 
+			</ul> 
+
+			<div id="spreadTheWordButton"> 
+			<a href="materials/"><img src="images/spreadTheWord.gif" /></a> 
+			</div> 
+			</div> 
+
+
+		</div> 
+	<div id="right">
+		<div id="pullquote"><img src="images/photo_CalifLandscape1.jpg" height="187" width="622" alt="A California native oak valley" /></div> 
+		<div id="content">
+
+<span style="float: right; text-align: right;">	<% if !current_user %>
+	  <%= link_to "Register", new_account_path %> |
+	  <%= link_to "Log In", new_user_session_path %>
+	<% else %>
+	  <%= link_to "My Account", account_path %> |
+	  <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+	<% end %></span>
 <h1>Authlogic Example App</h1>
 <%= pluralize User.logged_in.count, "user" %> currently logged in<br /> <!-- This based on last_request_at, if they were active < 10 minutes they are logged in -->
 <br />
@@ -29,6 +69,9 @@
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield  %>
+
+</div>
+</div>
 
 </body>
 </html>
