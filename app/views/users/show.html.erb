@@ -9,13 +9,13 @@
 </p>
 
 <p>
-  <b>Last request at:</b>
-  <%=h @user.last_request_at %>
+  <b>Last page request:</b>
+  <%=h time_ago_in_words(@user.last_request_at)  %> ago
 </p>
 
 <p>
-  <b>Last login at:</b>
-  <%=h @user.last_login_at %>
+  <b>Last login:</b>
+  <%=h time_ago_in_words(@user.last_login_at) %> ago
 </p>
 
 <p>
