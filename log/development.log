@@ -2574,3 +2574,163 @@ Processing MainController#intro (for 127.0.0.1 at 2010-03-23 00:27:20) [GET]
 Rendering template within layouts/application
 Rendering main/intro
 Completed in 88ms (View: 86, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-23 08:46:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.0ms)
+Completed in 26ms (View: 12, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing MainController#intro (for 127.0.0.1 at 2010-03-23 08:46:23) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"main"}
+Rendering template within layouts/application
+Rendering main/intro
+Completed in 33ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MainController#intro (for 127.0.0.1 at 2010-03-23 09:52:17) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"main"}
+Rendering template within layouts/application
+Rendering main/intro
+Completed in 90ms (View: 88, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MainController#intro (for 127.0.0.1 at 2010-03-23 09:53:20) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"main"}
+Rendering template within layouts/application
+Rendering main/intro
+Completed in 22ms (View: 21, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MainController#intro (for 127.0.0.1 at 2010-03-23 09:53:32) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"main"}
+Rendering template within layouts/application
+Rendering main/intro
+Completed in 22ms (View: 21, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MainController#intro (for 127.0.0.1 at 2010-03-23 09:57:05) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"main"}
+Rendering template within layouts/application
+Rendering main/intro
+Completed in 23ms (View: 22, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MainController#intro (for 127.0.0.1 at 2010-03-23 10:02:24) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"main"}
+Rendering template within layouts/application
+Rendering main/intro
+Completed in 22ms (View: 20, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MainController#intro (for 127.0.0.1 at 2010-03-23 10:04:24) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"main"}
+Rendering template within layouts/application
+Rendering main/intro
+Completed in 87ms (View: 84, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MainController#intro (for 127.0.0.1 at 2010-03-23 10:04:38) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"main"}
+Rendering template within layouts/application
+Rendering main/intro
+Completed in 23ms (View: 21, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MainController#intro (for 127.0.0.1 at 2010-03-23 10:04:48) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"main"}
+Rendering template within layouts/application
+Rendering main/intro
+Completed in 21ms (View: 20, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#intro (for 127.0.0.1 at 2010-03-23 10:08:28) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"main"}
+
+NameError (uninitialized constant MainController):
+  
+
+Rendered rescues/_trace (25.4ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-23 10:09:18) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 277ms (View: 275, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-23 10:09:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.5ms)
+Completed in 28ms (View: 15, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-23 10:10:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.6ms)
+Completed in 29ms (View: 15, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-23 10:10:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.9ms)
+Completed in 24ms (View: 11, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-23 10:10:48) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.9ms)
+Completed in 28ms (View: 15, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-23 10:12:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.1ms)
+Completed in 28ms (View: 15, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-23 10:12:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.5ms)
+Completed in 27ms (View: 14, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-23 10:12:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.7ms)
+Completed in 28ms (View: 14, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-23 10:12:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (2.6ms)
+Completed in 90ms (View: 77, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-23 10:20:19) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 68ms (View: 66, DB: 0) | 200 OK [http://localhost/]

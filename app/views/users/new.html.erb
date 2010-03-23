@@ -1,7 +1,11 @@
-<h1>Register</h1>
+<h1>PlantRight Spring Nursery Survey Registration</h1>
+<br />
+<br />
+<p>Please just fill out all of the form fields below and you'll be registered with PlantRight.  After registration you'll be directed to the Webinar page.</p>
+<br />
 
 <% form_for @user, :url => account_path do |f| %>
   <%= f.error_messages %>
-  <%= render :partial => "form", :object => f %>
+  <%= render :partial => "form", :object => f %><br />
   <%= f.submit "Register" %>
 <% end %>
