@@ -1,4 +1,12 @@
 <p>
+  <b>Last, First:</b>
+  <%=h @user.last_name %>, <%=h @user.first_name%>
+</p>
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+<p>
   <b>Login:</b>
   <%=h @user.login %>
 </p>
@@ -15,7 +23,7 @@
 
 <p>
   <b>Last login:</b>
-  <%=h time_ago_in_words(@user.last_login_at) %> ago
+  <%=h @user.last_login_at %> ago
 </p>
 
 <p>
