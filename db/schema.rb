@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100321222606) do
+ActiveRecord::Schema.define(:version => 20100323183925) do
+
+  create_table "answers", :force => true do |t|
+    t.integer  "question_id"
+    t.string   "body"
+    t.boolean  "is_correct"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", :force => true do |t|
+    t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -34,15 +48,19 @@ ActiveRecord::Schema.define(:version => 20100321222606) do
     t.datetime "current_login_at"
     t.string   "last_login_ip"
     t.string   "current_login_ip"
-    t.boolean  "has_passed_quiz",   :default => false
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "is_admin",          :default => false
-    t.string   "email"
+    t.string   "perishable_token",  :default => "",    :null => false
+    t.string   "email",             :default => "",    :null => false
+    t.string   "county"
+    t.text     "referral"
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email"
   add_index "users", ["last_request_at"], :name => "index_users_on_last_request_at"
   add_index "users", ["login"], :name => "index_users_on_login"
+  add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
   add_index "users", ["persistence_token"], :name => "index_users_on_persistence_token"
 
 end

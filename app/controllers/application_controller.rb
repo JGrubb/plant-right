@@ -43,4 +43,12 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
+    
+    def member_status
+      current_user.has_passed_quiz?
+    end
+    
+    def admin_status
+      current_user.is_admin?
+    end
 end

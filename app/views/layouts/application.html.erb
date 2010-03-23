@@ -15,7 +15,7 @@
 		<div id="left"> 
 
 			<div id="logo"> 
-			<%= link_to image_tag("../images/PlantRightLogo.gif"), root_url %> 
+			<%= link_to image_tag("../images/PlantRightLogo.gif"), "http://plantright.org" %> 
 			</div> 
 
 
@@ -41,17 +41,17 @@
 
 
 		</div> 
-	<div id="right">
-		<div id="pullquote"><img src="../images/butterfly_banner.jpg" height="187" width="622" alt="A California native oak valley" /></div> 
-		<div id="content">
+		<div id="right">
+			<div id="pullquote"><img src="../images/butterfly_banner.jpg" height="187" width="622" alt="A California native oak valley" /></div> 
+			<div id="content">
 
-<span style="float: right; text-align: right;">	<% if !current_user %>
-	  <%= link_to "Register", new_account_path %> |
-	  <%= link_to "Log In", new_user_session_path %>
-	<% else %>
-	  <%= link_to "My Account", account_path %> |
-	  <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
-	<% end %></span>
+				<span style="float: right; text-align: right;">	<% if !current_user %>
+	 			 <%= link_to "Register", new_account_path %> |
+				 <%= link_to "Log In", login_path %>
+				<% else %>
+				 <%= link_to "My Account", account_path %> |
+				 <%= link_to "Logout", logout_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+				<% end %></span>
 <br />
 <br />
 
@@ -59,8 +59,8 @@
 
 <%= yield  %>
 
-</div>
-</div>
+			</div><!--end content-->
+		</div><!--end right-->
 	<div id="footer"> 
 	
 	<p id="copyright">&copy; Copyright 2007-<%= t = Time.now
