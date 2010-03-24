@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
   map.connect  ':controller/:action/:id'
   map.connect  ':controller/:action/:id.:format'
+  map.quiz  "quiz", :controller => "quiz", :action => "welcome"
   map.resource :account, :controller => "users"
   map.resources :users
   map.resources :password_resets

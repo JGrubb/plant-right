@@ -4052,3 +4052,331 @@ Migrating to AddCountyAndReferralToUser (20100323183925)
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_last_request_at')[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_persistence_token')[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-24 14:42:23', "perishable_token" = 'OkqK--tmGxa6Uu8dLVY_', "is_admin" = 't' WHERE "id" = 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20081103171327)
+Migrating to CreateSessions (20081106072031)
+Migrating to AddFieldsToUser (20100321181432)
+Migrating to AddAdminAndHasPassedQuizToUser (20100321222606)
+Migrating to CreateQuestions (20100323145121)
+Migrating to CreateAnswers (20100323145209)
+Migrating to AddUsersPasswordResetFields (20100323175033)
+Migrating to AddCountyAndReferralToUser (20100323183925)
+Migrating to AddHasPassedQuizToUsers (20100324144506)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "users" ADD "has_passed_quiz" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100324144506')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("questions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("sessions")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_email')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_perishable_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_last_request_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_persistence_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-24 15:05:31', "perishable_token" = '35YRPfYWlE96wQnIB_Kp', "has_passed_quiz" = 't' WHERE "id" = 1[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-24 11:20:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (10.8ms)
+Completed in 138ms (View: 52, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-24 11:21:16) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "county"=>"sussex", "last_name"=>"Grubb", "password"=>"[FILTERED]", "login"=>"testboy", "referral"=>"dev", "email"=>"therealjohnnygrubb@gmail.com", "first_name"=>"John"}}
+  [4;36;1mUser Load (13.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'therealjohnnygrubb@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'testboy') LIMIT 1[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'c2f607c4118a116a3934ad62f66ed78b63e20303cdfd2da5b65abef723421dd52718333784c698fecc4226af2d650dfa780825b33c60682126fb5ee821fff2b0') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.3ms)
+Completed in 301ms (View: 13, DB: 15) | 200 OK [http://localhost/account]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-24 11:21:28) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "county"=>"sussex", "last_name"=>"Grubb", "password"=>"[FILTERED]", "login"=>"testboy", "referral"=>"dev", "email"=>"testboy@gmail.com", "first_name"=>"John"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'testboy@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'testboy') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '9c78687574fd8e17758d233e7746b0fa199d72458154d7c5253e310e9c612b58eced87a990d2781a365db0903c8937174e2e2e391a431bbb93ed15bbb05a72bb') LIMIT 1[0m
+  [4;36;1mUser Create (8.9ms)[0m   [0;1mINSERT INTO "users" ("created_at", "last_request_at", "crypted_password", "updated_at", "perishable_token", "current_login_ip", "county", "password_salt", "current_login_at", "is_admin", "persistence_token", "login_count", "last_name", "last_login_ip", "login", "last_login_at", "referral", "has_passed_quiz", "first_name", "email") VALUES('2010-03-24 15:21:29', '2010-03-24 15:21:29', '78b84de1d1e6b3fe55068c8699064962669aa8ae1ef621ceb5a617c6fc21fdf36f31cab583ab3425f56e5e33b02723fe7eabb606ca75fda57864872f7f8c90ca', '2010-03-24 15:21:29', 'VI18QJ0cM2ITifp_r_Us', '127.0.0.1', 'sussex', 'oeyh6nnglKAunvlGGFCc', '2010-03-24 15:21:28', 'f', '9c78687574fd8e17758d233e7746b0fa199d72458154d7c5253e310e9c612b58eced87a990d2781a365db0903c8937174e2e2e391a431bbb93ed15bbb05a72bb', 1, 'Grubb', NULL, 'testboy', NULL, 'dev', 'f', 'John', 'testboy@gmail.com')[0m
+Redirected to http://localhost:3000/quiz
+Completed in 475ms (DB: 10) | 302 Found [http://localhost/account]
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-24 11:21:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+
+ActionController::UnknownAction (No action responded to index. Actions: new, question, result, and welcome):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-24 11:22:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering main
+
+ActionView::MissingTemplate (Missing template main.erb in view path app/views):
+  app/controllers/quiz_controller.rb:6:in `index'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-24 11:22:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering quiz/main
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '9c78687574fd8e17758d233e7746b0fa199d72458154d7c5253e310e9c612b58eced87a990d2781a365db0903c8937174e2e2e391a431bbb93ed15bbb05a72bb') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-24 15:22:48', "perishable_token" = 'hSDn3CL_t9OEpN7yVknu', "last_request_at" = '2010-03-24 15:22:48' WHERE "id" = 2[0m
+Completed in 144ms (View: 140, DB: 1) | 200 OK [http://localhost/quiz]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-24 11:23:17) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '9c78687574fd8e17758d233e7746b0fa199d72458154d7c5253e310e9c612b58eced87a990d2781a365db0903c8937174e2e2e391a431bbb93ed15bbb05a72bb') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-24 15:23:17', "perishable_token" = 'Vnu7ynv3-_5_Nh7Pb0UU', "last_request_at" = '2010-03-24 15:23:17' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-24 11:23:17) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 90ms (View: 89, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-24 11:23:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 49ms (View: 35, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-24 11:23:33) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"testboy"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'testboy') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "login_count" = 2, "updated_at" = '2010-03-24 15:23:33', "perishable_token" = 'SG7_MLNtRXvo8FQ2B_zN', "last_request_at" = '2010-03-24 15:23:33', "last_login_at" = '2010-03-24 15:21:28', "last_login_ip" = '127.0.0.1', "current_login_at" = '2010-03-24 15:23:33' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/
+Completed in 684ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-24 11:23:33) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-24 15:23:33', "perishable_token" = 't9HZrbg1rPHI84Ew_62_', "last_request_at" = '2010-03-24 15:23:33' WHERE "id" = 2[0m
+Completed in 32ms (View: 29, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-24 11:25:26) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-24 15:25:26', "perishable_token" = '2_qSypZV8Bj8mOXbwSmI', "last_request_at" = '2010-03-24 15:25:26' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/
+Completed in 321ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-24 11:25:26) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 20ms (View: 18, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-24 11:25:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 22ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-24 11:25:40) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"testboy"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'testboy') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "login_count" = 3, "updated_at" = '2010-03-24 15:25:40', "perishable_token" = '9BpxxJi4_rkZKpuHZE-z', "last_request_at" = '2010-03-24 15:25:40', "last_login_at" = '2010-03-24 15:23:33', "current_login_at" = '2010-03-24 15:25:40' WHERE "id" = 2[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `has_passed_quiz?' for #<Class:0x10369a1a0>):
+  app/controllers/user_sessions_controller.rb:13:in `create'
+
+Rendered rescues/_trace (29.4ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-24 11:27:05) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"testboy"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-24 15:27:05', "perishable_token" = 'RI5vG1JJuw6B7k-AhII4', "last_request_at" = '2010-03-24 15:27:05' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 383ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-24 11:27:05) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-24 15:27:05', "perishable_token" = 'JqXWL9GQpPT9FqW9KvzH', "last_request_at" = '2010-03-24 15:27:05' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 130ms (View: 106, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-24 11:28:26) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-24 15:28:26', "perishable_token" = '5IU9zFwrs1KGxDgwZZkc', "last_request_at" = '2010-03-24 15:28:26' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/user_session
+Completed in 27ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#show (for 127.0.0.1 at 2010-03-24 11:28:26) [GET]
+  Parameters: {"action"=>"show", "controller"=>"user_sessions"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, destroy, and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UserSessionsController#show (for 127.0.0.1 at 2010-03-24 11:31:19) [GET]
+  Parameters: {"action"=>"show", "controller"=>"user_sessions"}
+
+ActionView::MissingTemplate (Missing template user_sessions/intro.erb in view path app/views):
+  app/controllers/user_sessions_controller.rb:10:in `show'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#show (for 127.0.0.1 at 2010-03-24 11:31:47) [GET]
+  Parameters: {"action"=>"show", "controller"=>"user_sessions"}
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/user_session]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-24 11:31:47) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 97ms (View: 95, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-24 11:32:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 21ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-24 11:32:06) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"jgrubb"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'jgrubb') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "login_count" = 2, "updated_at" = '2010-03-24 15:32:06', "perishable_token" = 'lNQsrA-CQxJYi0U7895M', "last_request_at" = '2010-03-24 15:32:06', "last_login_at" = '2010-03-24 14:38:33', "last_login_ip" = '127.0.0.1', "current_login_at" = '2010-03-24 15:32:06' WHERE "id" = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `member_status' for #<Class:0x1031fee98>):
+  app/controllers/user_sessions_controller.rb:17:in `create'
+
+Rendered rescues/_trace (103.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-24 11:32:56) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"jgrubb"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-24 15:32:56', "perishable_token" = 'jL7lfWEunjsw0XB14xbF', "last_request_at" = '2010-03-24 15:32:56' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/account
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 227ms (DB: 2) | 302 Found [http://localhost/user_session]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-24 11:32:56) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-24 15:32:56', "perishable_token" = 'oAbxk8mt8Wy27aHdR0JC', "last_request_at" = '2010-03-24 15:32:56' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 32ms (View: 7, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-24 11:34:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-24 15:34:02', "perishable_token" = 'Je71LhfQjxQSxw9jz07e', "last_request_at" = '2010-03-24 15:34:02' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as [:require_no_user] rendered_or_redirected.
+Completed in 380ms (DB: 1) | 302 Found [http://localhost/login]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-24 11:34:03) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-24 15:34:03', "perishable_token" = 'x_1pYqXg4nuHvzTv5WDq', "last_request_at" = '2010-03-24 15:34:03' WHERE "id" = 1[0m
+Completed in 408ms (View: 405, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-24 11:34:06) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-24 15:34:06', "perishable_token" = '14pRjkDtDZZf9H7ZiX70', "last_request_at" = '2010-03-24 15:34:06' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/login
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-24 11:34:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-24 11:34:13) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"jgrubb"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'jgrubb') LIMIT 1[0m
+  [4;36;1mUser Update (250.8ms)[0m   [0;1mUPDATE "users" SET "login_count" = 3, "updated_at" = '2010-03-24 15:34:13', "perishable_token" = 'iOb-_oyeTmh2KJTvF5lQ', "last_request_at" = '2010-03-24 15:34:13', "last_login_at" = '2010-03-24 15:32:06', "current_login_at" = '2010-03-24 15:34:13' WHERE "id" = 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `member_status' for #<Class:0x103495210>):
+  app/controllers/user_sessions_controller.rb:17:in `create'
+
+Rendered rescues/_trace (29.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)

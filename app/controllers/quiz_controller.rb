@@ -1,15 +1,15 @@
 class QuizController < ApplicationController
   
-  before_filter :admin_status, :only => :new_question
+  before_filter :admin_status, :only => :new
   
-  def welcome
-    render(:template => 'main')
+  def index
+    render(:template => 'quiz/main')
   end
   
   def question
   end
   
-  def new_question
+  def new
     
   end
 

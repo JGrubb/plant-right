@@ -6,11 +6,19 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new
   end
   
+  def show
+    redirect_to root_url
+  end
+  
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Login successful!"
-      redirect_back_or_default root_url
+      if User.member_status
+        survey_url
+      else
+        redirect_back_or_default root_url
+      end
     else
       render :action => :new
     end
