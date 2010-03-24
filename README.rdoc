@@ -1,11 +1,9 @@
-Console Directions:
+= Console Directions:
 
-$ script/console
->> u = User.first
->> u.has_passed_quiz
->> u.is_admin
-
-===========================================================
+* $ script/console
+* >> u = User.first
+* >> u.has_passed_quiz
+* >> u.is_admin
 
 = Authlogic Example App
 
