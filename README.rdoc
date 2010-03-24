@@ -1,3 +1,12 @@
+Console Directions:
+
+$ script/console
+>> u = User.first
+>> u.has_passed_quiz
+>> u.is_admin
+
+===========================================================
+
 = Authlogic Example App
 
 This is an example of how to use Authlogic in a rails app. Authlogic is a clean, simple, and unobtrusive ruby authentication solution.

@@ -44,7 +44,12 @@ class ApplicationController < ActionController::Base
       session[:return_to] = nil
     end
     
+#     def member_status
+#       current_user.has_passed_quiz?
+#     end
+
+		# See notes in User model
     def member_status
-      current_user.has_passed_quiz?
+      current_user.has_passed_quiz
     end
 end
