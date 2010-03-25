@@ -14,14 +14,18 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Login successful!"
-      if member_status
-        survey_url
-      else
-        redirect_back_or_default root_url
-      end
+			redirect_to user_redirect_url
     else
       render :action => :new
     end
+  end
+  
+  def redirect
+    unless current_user.has_passed_quiz
+      redirect_to quiz_url
+    else
+      redirect_to survey_intro_url
+    end  
   end
   
   def destroy
