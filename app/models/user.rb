@@ -4,9 +4,8 @@ class User < ActiveRecord::Base
   validates_presence_of  :email, :last_name, :first_name, :county, :referral,
                         :message => "All fields are required."
 
-# These methods don't really do anything, what you want to do is reference the attribute directly
-# so it would either be @user.has_passed_quiz or current_user.has_passed_quiz.  What this means
-# is that you are directly referencing the boolan value.  No wrappers required.
+#  I've tried it all.  self.has_passed_quiz User.has_passed_quiz @user.has_passed_quiz
+#  and all I get is the same "undefined method error"
 #              
    def member_status
      @user.has_passed_quiz
