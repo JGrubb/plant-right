@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
      @user.has_passed_quiz
    end
    
+# Would love to have a list of members so I can maunally set their has_passed_quiz value manually
+# since I've barely even touched the quiz.  Yes, I'm a little discouraged.
+# Not sure how to corale this into a view, though. 
    def member_list
      list = User.find(:all, :order => "has_passed_quiz, last_name DESC")
     end
