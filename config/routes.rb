@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   
 	# QUIZ ROUTES
   map.quiz  "quiz", :controller => "quiz", :action => "index"
+  map.grade_quiz "quiz/grade", :controller => "quiz", :action => "grade"
   
   # SURVEY ROUTES
   map.survey_participants "survey/participants", :controller => "survey", :action => "participants"
