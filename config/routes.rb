@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect  ':controller/:action/:id'
   map.connect  ':controller/:action/:id.:format'
   map.quiz  "quiz", :controller => "quiz", :action => "welcome"
+  map.register "register", :controller => "users", :action => "new"
   map.resource :account, :controller => "users"
   map.resources :users
   map.resources :password_resets

@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Login successful!"
-      if User.member_status
+      if member_status
         survey_url
       else
         redirect_back_or_default root_url

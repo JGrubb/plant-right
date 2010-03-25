@@ -44,9 +44,10 @@
 		<div id="right">
 			<div id="pullquote"><img src="../images/butterfly_banner.jpg" height="187" width="622" alt="A California native oak valley" /></div> 
 			<div id="content">
+				<div class="breadcrumbs"><%= link_to "PlantRight", "http://plantright.org" %> > <%= link_to "Survey home", root_url %></div>
 
 				<span style="float: right; text-align: right;">	<% if !current_user %>
-	 			 <%= link_to "Register", new_account_path %> |
+	 			 <%= link_to "Register", register_path %> |
 				 <%= link_to "Log In", login_path %>
 				<% else %>
 				 <%= link_to "My Account", account_path %> |

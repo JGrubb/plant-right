@@ -10,7 +10,7 @@ class QuizController < ApplicationController
   end
   
   def new
-    
+    Question.new
   end
 
   def result
