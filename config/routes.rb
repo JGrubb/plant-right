@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.quiz  "quiz", :controller => "quiz", :action => "index"
   
   # SURVEY ROUTES
-  map.survey_intro "survey/introduction", :controller => "survey", :action => "intro"
+  map.survey_participants "survey/participants", :controller => "survey", :action => "participants"
   
   # AUTHENTICATION ROUTES
   map.user_redirect "user_redirect", :controller => "user_sessions", :action => "redirect"
