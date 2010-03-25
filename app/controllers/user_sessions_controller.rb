@@ -21,11 +21,13 @@ class UserSessionsController < ApplicationController
   end
   
   def redirect
-    unless current_user.has_passed_quiz
+    if current_user.is_admin
+      redirect_to admin_url
+    elsif !current_user.has_passed_quiz
       redirect_to quiz_url
     else
-      redirect_to survey_intro_url
-    end  
+      redirect_to survey_participants_url  
+    end
   end
   
   def destroy
