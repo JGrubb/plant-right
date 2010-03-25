@@ -1,19 +1,13 @@
-class QuizController < ApplicationController
-  
-  before_filter :admin_status, :only => :new
-  
+class QuizController < ApplicationController 
   def index
-    render(:template => 'quiz/main')
+		@questions = Quiz::questions
+		@choices = Quiz::choices
   end
   
-  def question
+  # This is where you will process the results
+  def grade
+  	quiz = Quiz.new
+  	quiz.grade(['array','of','answers'])
+  	quiz.passed?
   end
-  
-  def new
-    Question.new
-  end
-
-  def result
-  end
-
 end
