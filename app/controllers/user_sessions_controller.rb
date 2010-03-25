@@ -1,6 +1,6 @@
 class UserSessionsController < ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
-  before_filter :require_user, :only => :destroy
+  before_filter :require_user, :only => [:destroy]
   
   def new
     @user_session = UserSession.new
@@ -23,10 +23,10 @@ class UserSessionsController < ApplicationController
   def redirect
     if current_user.is_admin
       redirect_to admin_url
-    elsif !current_user.has_passed_quiz
-      redirect_to quiz_url
+    elsif current_user.has_passed_quiz
+      redirect_to survey_participants_url 
     else
-      redirect_to survey_participants_url  
+      redirect_to quiz_url
     end
   end
   
