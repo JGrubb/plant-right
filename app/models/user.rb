@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
 #  I've tried it all.  self.has_passed_quiz User.has_passed_quiz @user.has_passed_quiz
 #  and all I get is the same "undefined method error"
-#              
+#  So where am I supposed to be defining this f-ing method?
    def member_status
      @user.has_passed_quiz
    end
