@@ -26,7 +26,7 @@ class UserSessionsController < ApplicationController
     elsif current_user.has_passed_quiz
       redirect_to survey_participants_url 
     else
-      redirect_to quiz_url
+      redirect_to webinar_url
     end
   end
   

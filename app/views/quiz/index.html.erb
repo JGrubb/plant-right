@@ -1,3 +1,11 @@
 <h3>The quiz</h3>
 
+<% form_for :quiz, :url => :grade_quiz do |form| %>
+
 <%= generate_quiz(@questions, @choices) %>
+<br />
+<br />
+
+<%= submit_tag "Submit!" %>
+
+<% end %>

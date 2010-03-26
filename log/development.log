@@ -7434,3 +7434,409 @@ Rendering quiz/index
   [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
   [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 02:36:58', "perishable_token" = 'DqLet-FADjN4Y7Y0iEma', "last_request_at" = '2010-03-26 02:36:58' WHERE "id" = 1[0m
 Completed in 393ms (View: 389, DB: 1) | 200 OK [http://localhost/quiz]
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-26 11:19:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering quiz/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:19:39', "perishable_token" = '0eaaHsi4fjRV9mq72J6l', "last_request_at" = '2010-03-26 15:19:39' WHERE "id" = 1[0m
+Completed in 100ms (View: 95, DB: 1) | 200 OK [http://localhost/quiz]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-26 11:19:44) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:19:44', "perishable_token" = 'FjmQ7pt2oXE0WGqLv_at', "last_request_at" = '2010-03-26 15:19:44' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 206ms (DB: 2) | 302 Found [http://localhost/logout]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 11:19:45) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 19ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 11:19:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (15.6ms)
+Completed in 188ms (View: 174, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-26 11:19:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 21ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-26 11:19:59) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"jgrubb"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'jgrubb') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "login_count" = 40, "updated_at" = '2010-03-26 15:19:59', "perishable_token" = 'Uca16Kc4I5VqiMMDIjLp', "last_request_at" = '2010-03-26 15:19:59', "last_login_at" = '2010-03-25 19:19:15', "current_login_at" = '2010-03-26 15:19:59' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/user_redirect
+Completed in 349ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#redirect (for 127.0.0.1 at 2010-03-26 11:19:59) [GET]
+  Parameters: {"action"=>"redirect", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:19:59', "perishable_token" = 'B4_wJe2iTZhqPwbHLwdL', "last_request_at" = '2010-03-26 15:19:59' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 462ms (DB: 1) | 302 Found [http://localhost/user_redirect]
+
+
+Processing ApplicationController#list (for 127.0.0.1 at 2010-03-26 11:20:00) [GET]
+  Parameters: {"action"=>"list", "controller"=>"user"}
+
+NameError (uninitialized constant UserController):
+  
+
+Rendered rescues/_trace (26.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#list (for 127.0.0.1 at 2010-03-26 11:20:43) [GET]
+  Parameters: {"action"=>"list", "controller"=>"user"}
+
+NameError (uninitialized constant UserController):
+  
+
+Rendered rescues/_trace (26.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#list (for 127.0.0.1 at 2010-03-26 11:20:52) [GET]
+  Parameters: {"action"=>"list", "controller"=>"user"}
+
+NameError (uninitialized constant UserController):
+  
+
+Rendered rescues/_trace (28.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#list (for 127.0.0.1 at 2010-03-26 11:20:54) [GET]
+  Parameters: {"action"=>"list", "controller"=>"user"}
+
+NameError (uninitialized constant UserController):
+  
+
+Rendered rescues/_trace (27.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#list (for 127.0.0.1 at 2010-03-26 11:21:03) [GET]
+  Parameters: {"action"=>"list", "controller"=>"user"}
+
+NameError (uninitialized constant UserController):
+  
+
+Rendered rescues/_trace (27.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#list (for 127.0.0.1 at 2010-03-26 11:21:04) [GET]
+  Parameters: {"action"=>"list", "controller"=>"user"}
+
+NameError (uninitialized constant UserController):
+  
+
+Rendered rescues/_trace (25.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 11:23:00) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:23:00', "perishable_token" = '2ufnUjQyW4bRT3ROEtL9', "last_request_at" = '2010-03-26 15:23:00' WHERE "id" = 1[0m
+Completed in 476ms (View: 473, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-26 11:23:08) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:23:08', "perishable_token" = 'wJFjrvibbv-guhuQ9Xeq', "last_request_at" = '2010-03-26 15:23:08' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 28ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 11:23:08) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 19ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-26 11:23:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 21ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-26 11:23:20) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"testboy"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'testboy') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "login_count" = 4, "updated_at" = '2010-03-26 15:23:20', "perishable_token" = 'yyB2e-T8up2yQy62PFtS', "last_request_at" = '2010-03-26 15:23:20', "last_login_at" = '2010-03-24 15:25:40', "current_login_at" = '2010-03-26 15:23:20' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/user_redirect
+Completed in 271ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#redirect (for 127.0.0.1 at 2010-03-26 11:23:20) [GET]
+  Parameters: {"action"=>"redirect", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:23:20', "perishable_token" = 'hUS6MKCixWKNPkT0_hUO', "last_request_at" = '2010-03-26 15:23:20' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/quiz
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/user_redirect]
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-26 11:23:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering quiz/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:23:20', "perishable_token" = 'TdPoRmJiJVUzzxFeyUVN', "last_request_at" = '2010-03-26 15:23:20' WHERE "id" = 2[0m
+Completed in 37ms (View: 33, DB: 1) | 200 OK [http://localhost/quiz]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-26 11:26:27) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:26:27', "perishable_token" = 'kRVc-J2txKrwJEKiLiu_', "last_request_at" = '2010-03-26 15:26:27' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/
+Completed in 190ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 11:26:27) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 41ms (View: 39, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-26 11:26:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 417ms (View: 403, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-26 11:26:35) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"testboy"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'testboy') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "login_count" = 5, "updated_at" = '2010-03-26 15:26:36', "perishable_token" = 'gHIGYYSGUYU0Br9riHha', "last_request_at" = '2010-03-26 15:26:36', "last_login_at" = '2010-03-26 15:23:20', "current_login_at" = '2010-03-26 15:26:36' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/user_redirect
+Completed in 862ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#redirect (for 127.0.0.1 at 2010-03-26 11:26:36) [GET]
+  Parameters: {"action"=>"redirect", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:26:36', "perishable_token" = '7YJnNqk9Yc6ff4W8ac1B', "last_request_at" = '2010-03-26 15:26:36' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/webinar
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/user_redirect]
+
+
+Processing QuizController#video (for 127.0.0.1 at 2010-03-26 11:26:36) [GET]
+  Parameters: {"action"=>"video", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering quiz/video
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:26:36', "perishable_token" = 'OxhrqfqIIAo7zW1tDqNn', "last_request_at" = '2010-03-26 15:26:36' WHERE "id" = 2[0m
+Completed in 472ms (View: 469, DB: 1) | 200 OK [http://localhost/webinar]
+
+
+Processing QuizController#video (for 127.0.0.1 at 2010-03-26 11:27:00) [GET]
+  Parameters: {"action"=>"video", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering quiz/video
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:27:00', "perishable_token" = 'nWp4_9eyiNysQQygO3mi', "last_request_at" = '2010-03-26 15:27:00' WHERE "id" = 2[0m
+Completed in 404ms (View: 401, DB: 1) | 200 OK [http://localhost/webinar]
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-26 11:27:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering quiz/index
+  [4;36;1mUser Load (69.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:27:09', "perishable_token" = 'xXNuVd3XTJt2KPFUqN70', "last_request_at" = '2010-03-26 15:27:09' WHERE "id" = 2[0m
+Completed in 518ms (View: 445, DB: 70) | 200 OK [http://localhost/quiz]
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-26 11:39:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering quiz/index
+ERROR: compiling _run_erb_app47views47quiz47index46html46erb RAISED compile error
+/Users/grubb/WORK/plant-right/app/views/quiz/index.html.erb:11: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47quiz47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h3>The quiz</h3>\n\n"
+
+;  form_for :quiz, :url => :grade ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( generate_quiz(@questions, @choices) ).to_s); @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( submit_tag ).to_s); @output_buffer.concat "\n\n"
+
+;  end ; @output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/grubb/WORK/plant-right/app/views/quiz/index.html.erb:11:in `compile!'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/renderable.rb:61:in `compile'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/renderable.rb:28:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/template.rb:205:in `render_template'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/base.rb:265:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/base.rb:348:in `_render_with_layout'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/base.rb:262:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/grubb/WORK/plant-right/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:1326:in `default_render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/grubb/WORK/plant-right/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/grubb/WORK/plant-right/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `send'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:391:in `process'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:386:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/session/abstract_store.rb:122:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/grubb/WORK/plant-right/vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache'
+/Users/grubb/WORK/plant-right/vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/failsafe.rb:26:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/reloader.rb:34:in `run'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Users/grubb/WORK/plant-right/vendor/rails/railties/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/grubb/WORK/plant-right/app/views/quiz/index.html.erb:11: syntax error, unexpected kENSURE, expecting $end) on line #11 of app/views/quiz/index.html.erb:
+8: 
+9: <% end %>
+
+    app/views/quiz/index.html.erb:11:in `compile!'
+
+Rendered rescues/_trace (37.3ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-26 11:40:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering quiz/index
+
+ActionView::TemplateError (undefined method `grade_path' for #<ActionView::Base:0x1030f1410>) on line #3 of app/views/quiz/index.html.erb:
+1: <h3>The quiz</h3>
+2: 
+3: <% form_for :quiz, :url => :grade do |form| %>
+4: 
+5: <%= generate_quiz(@questions, @choices) %>
+6: 
+
+    app/views/quiz/index.html.erb:3
+
+Rendered rescues/_trace (124.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-26 11:40:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering quiz/index
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:40:52', "perishable_token" = 'xbb_-3pxtANMjHzEuLzy', "last_request_at" = '2010-03-26 15:40:52' WHERE "id" = 2[0m
+Completed in 418ms (View: 413, DB: 1) | 200 OK [http://localhost/quiz]
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-26 11:41:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering quiz/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:41:06', "perishable_token" = '2ixgN3gT1ZFa88jgtrvs', "last_request_at" = '2010-03-26 15:41:06' WHERE "id" = 2[0m
+Completed in 474ms (View: 469, DB: 1) | 200 OK [http://localhost/quiz]
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-26 11:41:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering quiz/index
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:41:20', "perishable_token" = 'qI3M8pw81R4UIWihFUv6', "last_request_at" = '2010-03-26 15:41:20' WHERE "id" = 2[0m
+Completed in 43ms (View: 38, DB: 1) | 200 OK [http://localhost/quiz]
+
+
+Processing QuizController#grade (for 127.0.0.1 at 2010-03-26 11:41:35) [POST]
+  Parameters: {"question1"=>"Blocks light and oxygen in waterways", "question2"=>"River/riparian", "commit"=>"Submit!", "question3"=>"False", "question4"=>"Voluntary partnership with industry and stakeholders", "action"=>"grade", "controller"=>"quiz", "question0"=>"California"}
+Rendering template within layouts/application
+Rendering quiz/grade
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:41:35', "perishable_token" = 'QHn_n_jLyPIbE0LRrVZx', "last_request_at" = '2010-03-26 15:41:35' WHERE "id" = 2[0m
+Completed in 392ms (View: 388, DB: 1) | 200 OK [http://localhost/quiz/grade]

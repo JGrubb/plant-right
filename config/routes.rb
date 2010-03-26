@@ -4,6 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.admin "admin", :controller => "user", :action => "list"
   
 	# QUIZ ROUTES
+  map.webinar "webinar", :controller => "quiz", :action => "video"
   map.quiz  "quiz", :controller => "quiz", :action => "index"
   map.grade_quiz "quiz/grade", :controller => "quiz", :action => "grade"
   
