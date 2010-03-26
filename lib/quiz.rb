@@ -1,13 +1,13 @@
 class Quiz
-	# Accesible value for the array of scores
-	attr_accessor :scores
-	# Accesible value for the final score
 	attr_accessor :score
+	attr_accessor :answers
+	attr_accessor :passed
 	
 	# Set up the Score as an Array
-	def initialize
-		@scores = Array.new
+	def initialize(answers)
+		@answers = answers
 		@score = 0
+		@passed = false
 	end
 
 	# Define Your Questions Here - static method so pull using Quiz::questions
@@ -43,29 +43,18 @@ class Quiz
 		}
 	end
 
-	# Grade the quiz.  Pass in an array of the user's answers in order
-	def grade(answers_array)
-		answers_array.each {|key, value| grade_question(key, value)}
-	end
-	
-	# Boolean as to whether the user passed or not
-	def passed?
-		calculate_score >= 4 ? true : false
-	end
-
-	# Add all of the values together
-	def calculate_score
-		@scores.each {|v| @score += v}
-		@score
+	# Grade the quiz.
+	def grade
+		@answers.each {|key, value| grade_question(key, value)} if @answers
 	end
 	
 	# Grade a single question
 	def grade_question(key, value)
-		@scores << 1 if value == answer(key)
+		@score += 1 if value == correct_answers[key.to_i]
 	end
 	
-	# Pull a single answer
-	def answer(key)
-		correct_answers[key]
+	# Boolean as to whether the user passed or not
+	def passed?
+		@passed = (@score >= 4 ? true : false)
 	end
 end

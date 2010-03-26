@@ -1,4 +1,6 @@
-class QuizController < ApplicationController 
+class QuizController < ApplicationController
+	before_filter :require_user
+
   def index
 		@questions = Quiz::questions
 		@choices = Quiz::choices
@@ -6,8 +8,8 @@ class QuizController < ApplicationController
   
   # This is where you will process the results
   def grade
-  	quiz = Quiz.new
-  	quiz.grade(['array','of','answers'])
-  	quiz.passed?
+  	quiz = Quiz.new(params[:quiz])
+  	quiz.grade
+  	current_user.update_attribute(:has_passed_quiz, quiz.passed?)
   end
 end
