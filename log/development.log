@@ -8778,3 +8778,246 @@ Migrating to AlteringReferralColumn (20100326182717)
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_last_request_at')[0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_persistence_token')[0m
   [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-26 14:34:37) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.9ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 18:34:37', "perishable_token" = 'ZpebOCpy2V7VTo6HNo0G', "last_request_at" = '2010-03-26 18:34:37' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 26ms (DB: 2) | 302 Found [http://localhost/logout]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 14:34:37) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 19ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 14:34:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #14 of app/views/users/_form.erb:
+11: <%= form.text_field :county %><br />
+12: <br />
+13: <%= form.label :master_gardener, "Are you a master gardener?" %><br />
+14: <%= form.radio_button :master_gardener %><br />
+15: <br />
+16: <%= form.label :login, "Username" %><br />
+17: <%= form.text_field :login %><br />
+
+    app/views/users/_form.erb:14:in `radio_button'
+    app/views/users/_form.erb:14
+    app/views/users/new.html.erb:9
+    app/views/users/new.html.erb:7
+
+Rendered rescues/_trace (48.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 14:36:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+ERROR: compiling _run_erb_app47views47users47_form46erb_locals_form_object RAISED compile error
+/Users/grubb/WORK/plant-right/app/views/users/_form.erb:14: syntax error, unexpected tASSOC, expecting ')'
+...on :master_gardener, (:true => 'yes', :false => 'no') ).to_s...
+                              ^
+/Users/grubb/WORK/plant-right/app/views/users/_form.erb:14: syntax error, unexpected ',', expecting ')'
+...ter_gardener, (:true => 'yes', :false => 'no') ).to_s); @out...
+                              ^
+Function body:           def _run_erb_app47views47users47_form46erb_locals_form_object(local_assigns)
+            old_output_buffer = output_buffer;object = local_assigns[:object];form = local_assigns[:form];;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat(( form.label :first_name ).to_s); @output_buffer.concat "<br />\n"
+; @output_buffer.concat(( form.text_field :first_name ).to_s); @output_buffer.concat "<br />\n<br />\n"
+
+; @output_buffer.concat(( form.label :last_name ).to_s); @output_buffer.concat "<br />\n"
+; @output_buffer.concat(( form.text_field :last_name ).to_s); @output_buffer.concat "<br />\n<br />\n"
+
+; @output_buffer.concat(( form.label :email ).to_s); @output_buffer.concat "<br />\n"
+; @output_buffer.concat(( form.text_field :email ).to_s); @output_buffer.concat "<br />\n<br />\n"
+
+; @output_buffer.concat(( form.label :county ).to_s); @output_buffer.concat "<br />\n"
+; @output_buffer.concat(( form.text_field :county ).to_s); @output_buffer.concat "<br />\n<br />\n"
+
+; @output_buffer.concat(( form.label :master_gardener, "Are you a master gardener?" ).to_s); @output_buffer.concat "<br />\n"
+; @output_buffer.concat(( form.radio_button :master_gardener, (:true => 'yes', :false => 'no') ).to_s); @output_buffer.concat "<br />\n<br />\n"
+
+; @output_buffer.concat(( form.label :login, "Username" ).to_s); @output_buffer.concat "<br />\n"
+; @output_buffer.concat(( form.text_field :login ).to_s); @output_buffer.concat "<br />\n<br />\n"
+
+; @output_buffer.concat(( form.label :password, form.object.new_record? ? nil : "Change password" ).to_s); @output_buffer.concat "<br />\n"
+; @output_buffer.concat(( form.password_field :password ).to_s); @output_buffer.concat "<br />\n<br />\n"
+
+; @output_buffer.concat(( form.label :password_confirmation ).to_s); @output_buffer.concat "<br />\n"
+; @output_buffer.concat(( form.password_field :password_confirmation ).to_s); @output_buffer.concat "<br />"; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/grubb/WORK/plant-right/app/views/users/_form.erb:26:in `compile!'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/renderable.rb:61:in `compile'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/renderable.rb:28:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:20:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Users/grubb/WORK/plant-right/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/grubb/WORK/plant-right/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:26:in `benchmark'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:19:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/template.rb:205:in `render_template'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:44:in `render_partial'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/partials.rb:184:in `render_partial'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/base.rb:267:in `render'
+/Users/grubb/WORK/plant-right/app/views/users/new.html.erb:9:in `_run_erb_app47views47users47new46html46erb'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/helpers/form_helper.rb:499:in `fields_for'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/helpers/form_helper.rb:282:in `form_for'
+/Users/grubb/WORK/plant-right/app/views/users/new.html.erb:7:in `_run_erb_app47views47users47new46html46erb'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `send'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/base.rb:306:in `with_template'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/renderable.rb:30:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/template.rb:205:in `render_template'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/base.rb:265:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/base.rb:348:in `_render_with_layout'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_view/base.rb:262:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/grubb/WORK/plant-right/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:1326:in `default_render'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/grubb/WORK/plant-right/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/grubb/WORK/plant-right/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `send'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:391:in `process'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/base.rb:386:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/session/abstract_store.rb:122:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/grubb/WORK/plant-right/vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache'
+/Users/grubb/WORK/plant-right/vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/failsafe.rb:26:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/reloader.rb:34:in `run'
+/Users/grubb/WORK/plant-right/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/grubb/WORK/plant-right/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Users/grubb/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/grubb/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Users/grubb/WORK/plant-right/vendor/rails/railties/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/grubb/WORK/plant-right/app/views/users/_form.erb:14: syntax error, unexpected tASSOC, expecting ')'
+...on :master_gardener, (:true => 'yes', :false => 'no') ).to_s...
+                              ^
+/Users/grubb/WORK/plant-right/app/views/users/_form.erb:14: syntax error, unexpected ',', expecting ')'
+...ter_gardener, (:true => 'yes', :false => 'no') ).to_s); @out...
+                              ^) on line #14 of app/views/users/_form.erb:
+11: <%= form.text_field :county %><br />
+12: <br />
+13: <%= form.label :master_gardener, "Are you a master gardener?" %><br />
+14: <%= form.radio_button :master_gardener, (:true => 'yes', :false => 'no') %><br />
+15: <br />
+16: <%= form.label :login, "Username" %><br />
+17: <%= form.text_field :login %><br />
+
+    app/views/users/_form.erb:26:in `compile!'
+    app/views/users/new.html.erb:9
+    app/views/users/new.html.erb:7
+
+Rendered rescues/_trace (47.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 14:41:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.5ms)
+Completed in 30ms (View: 16, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 14:42:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.0ms)
+Completed in 33ms (View: 17, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 14:42:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `merge' for "yes":String) on line #14 of app/views/users/_form.erb:
+11: <%= form.text_field :county %><br />
+12: <br />
+13: <%= form.label :master_gardener, "Are you a master gardener?" %>
+14: <%= form.check_box (:master_gardener, 'yes' ) %><br />
+15: <br />
+16: <%= form.label :login, "Username" %><br />
+17: <%= form.text_field :login %><br />
+
+    app/views/users/_form.erb:14
+    app/views/users/new.html.erb:9
+    app/views/users/new.html.erb:7
+
+Rendered rescues/_trace (127.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 14:43:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.7ms)
+Completed in 32ms (View: 17, DB: 0) | 200 OK [http://localhost/register]
