@@ -7840,3 +7840,395 @@ Rendering quiz/grade
   [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
   [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 15:41:35', "perishable_token" = 'QHn_n_jLyPIbE0LRrVZx', "last_request_at" = '2010-03-26 15:41:35' WHERE "id" = 2[0m
 Completed in 392ms (View: 388, DB: 1) | 200 OK [http://localhost/quiz/grade]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 12:02:42) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 16:02:42', "perishable_token" = 'QbjwboxaSxhH3ZfnbfjH', "last_request_at" = '2010-03-26 16:02:42' WHERE "id" = 2[0m
+Completed in 394ms (View: 391, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-26 12:06:00) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 16:06:00', "perishable_token" = 'bWnxGzI5A7UlMC97v2E8', "last_request_at" = '2010-03-26 16:06:00' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/
+Completed in 317ms (DB: 2) | 302 Found [http://localhost/logout]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 12:06:01) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 25ms (View: 23, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-26 12:06:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 21ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-26 12:06:46) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"testboy"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'testboy') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "login_count" = 6, "updated_at" = '2010-03-26 16:06:46', "perishable_token" = 'fx2ihPmqBkGFRE5pLeNd', "last_request_at" = '2010-03-26 16:06:46', "last_login_at" = '2010-03-26 15:26:36', "current_login_at" = '2010-03-26 16:06:46' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/user_redirect
+Completed in 371ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#redirect (for 127.0.0.1 at 2010-03-26 12:06:47) [GET]
+  Parameters: {"action"=>"redirect", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 16:06:47', "perishable_token" = 'e9Emp6Gh8c4ZI7KNhssB', "last_request_at" = '2010-03-26 16:06:47' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/webinar
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/user_redirect]
+
+
+Processing QuizController#video (for 127.0.0.1 at 2010-03-26 12:06:47) [GET]
+  Parameters: {"action"=>"video", "controller"=>"quiz"}
+Rendering template within layouts/application
+Rendering quiz/video
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 16:06:47', "perishable_token" = '3-rXCqQxSZ_ebg7CsoZD', "last_request_at" = '2010-03-26 16:06:47' WHERE "id" = 2[0m
+Completed in 484ms (View: 481, DB: 1) | 200 OK [http://localhost/webinar]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-26 12:07:05) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 16:07:05', "perishable_token" = 'yXUTI4dRxYbndH4_qvu_', "last_request_at" = '2010-03-26 16:07:05' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/
+Completed in 384ms (DB: 2) | 302 Found [http://localhost/logout]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 12:07:05) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 18ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-26 12:07:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 21ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-26 12:07:12) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"jgrubb"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'jgrubb') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "login_count" = 41, "updated_at" = '2010-03-26 16:07:12', "perishable_token" = 'rgXEmLpjAZ3DSPlZAzXM', "last_request_at" = '2010-03-26 16:07:12', "last_login_at" = '2010-03-26 15:19:59', "current_login_at" = '2010-03-26 16:07:12' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/user_redirect
+Completed in 275ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#redirect (for 127.0.0.1 at 2010-03-26 12:07:12) [GET]
+  Parameters: {"action"=>"redirect", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 16:07:12', "perishable_token" = 'AfzkabRL6ZknfkbGzWlV', "last_request_at" = '2010-03-26 16:07:12' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/admin
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/user_redirect]
+
+
+Processing ApplicationController#list (for 127.0.0.1 at 2010-03-26 12:07:12) [GET]
+  Parameters: {"action"=>"list", "controller"=>"user"}
+
+NameError (uninitialized constant UserController):
+  
+
+Rendered rescues/_trace (25.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-26 16:09:40', "perishable_token" = 'tyO446yCWfvBKF1fAdpp', "has_passed_quiz" = 't' WHERE "id" = 2[0m
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 12:09:57) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 16:09:57', "perishable_token" = '3D06XF6e6XYBtIC80m5p', "last_request_at" = '2010-03-26 16:09:57' WHERE "id" = 1[0m
+Completed in 390ms (View: 387, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-26 12:10:00) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 16:10:00', "perishable_token" = 'Q-R2MIjoWcr4XKrVWaai', "last_request_at" = '2010-03-26 16:10:00' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 382ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 12:10:00) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 18ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-26 12:10:02) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 28ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-26 12:10:11) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"testboy"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'testboy') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "login_count" = 7, "updated_at" = '2010-03-26 16:10:11', "perishable_token" = 'CF3XFNFbyVssgSrcFhgu', "last_request_at" = '2010-03-26 16:10:11', "last_login_at" = '2010-03-26 16:06:46', "current_login_at" = '2010-03-26 16:10:11' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/user_redirect
+Completed in 349ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#redirect (for 127.0.0.1 at 2010-03-26 12:10:12) [GET]
+  Parameters: {"action"=>"redirect", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 16:10:12', "perishable_token" = 'fDG46R539uJ_kemRzlzm', "last_request_at" = '2010-03-26 16:10:12' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/survey/participants
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/user_redirect]
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 12:10:12) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+
+NoMethodError (undefined method `has_passed_quiz' for #<SurveyController:0x103322ef0>):
+  
+
+Rendered rescues/_trace (31.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 12:11:59) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 16:11:59', "perishable_token" = 'PYrLyudsX5LoW66Tmyow', "last_request_at" = '2010-03-26 16:11:59' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering survey/participants
+Completed in 543ms (View: 10, DB: 1) | 200 OK [http://localhost/survey/participants]
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 12:33:31) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (9.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 16:33:31', "perishable_token" = 'QfX0T0beewI_6UemoL9m', "last_request_at" = '2010-03-26 16:33:31' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering survey/participants
+Completed in 75ms (View: 11, DB: 10) | 200 OK [http://localhost/survey/participants]
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 13:31:00) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 17:31:00', "perishable_token" = '9vkw2BLtrrgLlLgFUlA0', "last_request_at" = '2010-03-26 17:31:00' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering survey/participants
+
+ActionView::TemplateError (undefined local variable or method `survey_download_path' for #<ActionView::Base:0x10329e1a0>) on line #29 of app/views/survey/participants.html.erb:
+26: 	<li>Note: it is very possible that none of the plants on the PlantRight list will be sold at the store you are visiting.  Please record this as well, as this information is still very important!</li>
+27: </ul>
+28: 
+29: <h3>Step 4 – Fill out <%= link_to "the survey form", survey_download_path %></h3>
+30: <ul>
+31: 	<li>Once you find an invasive plant listed on the survey form record the following information from the plant label and store signage:</li>
+32: 	<ul>
+
+    app/views/survey/participants.html.erb:29
+
+Rendered rescues/_trace (108.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 13:32:21) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 17:32:21', "perishable_token" = 's3soQ8yEtqfAR97_pGfo', "last_request_at" = '2010-03-26 17:32:21' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering survey/participants
+Completed in 29ms (View: 6, DB: 1) | 200 OK [http://localhost/survey/participants]
+
+
+Processing SurveyController#survey_download (for 127.0.0.1 at 2010-03-26 13:32:25) [GET]
+  Parameters: {"action"=>"survey_download", "controller"=>"survey"}
+
+ActionController::MissingFile (Cannot read file /public/files/survey_materials.zip):
+  app/controllers/survey_controller.rb:11:in `survey_download'
+
+Rendered rescues/_trace (30.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SurveyController#survey_download (for 127.0.0.1 at 2010-03-26 13:32:53) [GET]
+  Parameters: {"action"=>"survey_download", "controller"=>"survey"}
+
+ActionController::MissingFile (Cannot read file /files/survey_materials.zip):
+  app/controllers/survey_controller.rb:11:in `survey_download'
+
+Rendered rescues/_trace (30.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SurveyController#survey_download (for 127.0.0.1 at 2010-03-26 13:33:17) [GET]
+  Parameters: {"action"=>"survey_download", "controller"=>"survey"}
+
+ActionController::MissingFile (Cannot read file /files/survey_materials.zip):
+  app/controllers/survey_controller.rb:11:in `survey_download'
+
+Rendered rescues/_trace (115.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SurveyController#survey_download (for 127.0.0.1 at 2010-03-26 13:33:19) [GET]
+  Parameters: {"action"=>"survey_download", "controller"=>"survey"}
+
+ActionController::MissingFile (Cannot read file /files/survey_materials.zip):
+  app/controllers/survey_controller.rb:11:in `survey_download'
+
+Rendered rescues/_trace (31.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SurveyController#survey_download (for 127.0.0.1 at 2010-03-26 13:33:30) [GET]
+  Parameters: {"action"=>"survey_download", "controller"=>"survey"}
+Sending X-Sendfile header public/files/survey_materials.zip
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/survey/doanloads]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 13:34:24) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 17:34:24', "perishable_token" = '4W7FmpsjGF7R2I100qtk', "last_request_at" = '2010-03-26 17:34:24' WHERE "id" = 2[0m
+Completed in 134ms (View: 131, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 13:34:26) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 17:34:26', "perishable_token" = '2JXLTYjYgPjBIOZzt5qs', "last_request_at" = '2010-03-26 17:34:26' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering survey/participants
+Completed in 394ms (View: 7, DB: 1) | 200 OK [http://localhost/survey/participants]
+
+
+Processing SurveyController#survey_download (for 127.0.0.1 at 2010-03-26 13:34:29) [GET]
+  Parameters: {"action"=>"survey_download", "controller"=>"survey"}
+Sending X-Sendfile header public/files/survey_materials.zip
+
+NameError (undefined local variable or method `participants_path' for #<SurveyController:0x1033c5e70>):
+  app/controllers/survey_controller.rb:12:in `survey_download'
+
+Rendered rescues/_trace (30.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SurveyController#index (for 127.0.0.1 at 2010-03-26 13:35:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"survey"}
+
+ActionController::UnknownAction (No action responded to index. Actions: intro, participants, and survey_download):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 13:35:17) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 17:35:17', "perishable_token" = 'lc8ixOzpt8q6I4LsVQll', "last_request_at" = '2010-03-26 17:35:17' WHERE "id" = 2[0m
+Completed in 470ms (View: 467, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 13:35:19) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 17:35:19', "perishable_token" = 'TuPvc6Yreylc8a3OWRZJ', "last_request_at" = '2010-03-26 17:35:19' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering survey/participants
+Completed in 397ms (View: 9, DB: 1) | 200 OK [http://localhost/survey/participants]
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 13:36:28) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 17:36:28', "perishable_token" = '36pXKkU_DwpAiM086IxW', "last_request_at" = '2010-03-26 17:36:28' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering survey/participants
+
+ActionView::TemplateError (undefined local variable or method `survey' for #<ActionView::Base:0x1033b96e8>) on line #29 of app/views/survey/participants.html.erb:
+26: 	<li>Note: it is very possible that none of the plants on the PlantRight list will be sold at the store you are visiting.  Please record this as well, as this information is still very important!</li>
+27: </ul>
+28: 
+29: <h3>Step 4 – Fill out <%= link_to "the survey form", :controller => survey, :action => survey_download %></h3>
+30: <ul>
+31: 	<li>Once you find an invasive plant listed on the survey form record the following information from the plant label and store signage:</li>
+32: 	<ul>
+
+    app/views/survey/participants.html.erb:29
+
+Rendered rescues/_trace (115.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 13:36:45) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 17:36:45', "perishable_token" = '66Wmhm48SI1PlRrjkrSQ', "last_request_at" = '2010-03-26 17:36:45' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering survey/participants
+
+ActionView::TemplateError (undefined local variable or method `survey' for #<ActionView::Base:0x1034a02c8>) on line #29 of app/views/survey/participants.html.erb:
+26: 	<li>Note: it is very possible that none of the plants on the PlantRight list will be sold at the store you are visiting.  Please record this as well, as this information is still very important!</li>
+27: </ul>
+28: 
+29: <h3>Step 4 – Fill out <%= link_to "the survey form", :controller => survey, :action => survey_download %></h3>
+30: <ul>
+31: 	<li>Once you find an invasive plant listed on the survey form record the following information from the plant label and store signage:</li>
+32: 	<ul>
+
+    app/views/survey/participants.html.erb:29
+
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 13:36:48) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-26 17:36:48', "perishable_token" = 'pFw4B3AQBtFl5ojyd1Py', "last_request_at" = '2010-03-26 17:36:48' WHERE "id" = 2[0m
+Rendering template within layouts/application
+Rendering survey/participants
+
+ActionView::TemplateError (undefined local variable or method `survey' for #<ActionView::Base:0x10302b238>) on line #29 of app/views/survey/participants.html.erb:
+26: 	<li>Note: it is very possible that none of the plants on the PlantRight list will be sold at the store you are visiting.  Please record this as well, as this information is still very important!</li>
+27: </ul>
+28: 
+29: <h3>Step 4 – Fill out <%= link_to "the survey form", :controller => survey, :action => survey_download %></h3>
+30: <ul>
+31: 	<li>Once you find an invasive plant listed on the survey form record the following information from the plant label and store signage:</li>
+32: 	<ul>
+
+    app/views/survey/participants.html.erb:29
+
+Rendered rescues/_trace (39.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
