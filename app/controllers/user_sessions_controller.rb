@@ -21,9 +21,7 @@ class UserSessionsController < ApplicationController
   end
   
   def redirect
-    if current_user.is_admin
-      redirect_to admin_url
-    elsif current_user.has_passed_quiz
+    if current_user.has_passed_quiz
       redirect_to survey_participants_url 
     else
       redirect_to webinar_url

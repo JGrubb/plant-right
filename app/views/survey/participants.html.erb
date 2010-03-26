@@ -26,7 +26,7 @@
 	<li>Note: it is very possible that none of the plants on the PlantRight list will be sold at the store you are visiting.  Please record this as well, as this information is still very important!</li>
 </ul>
 
-<h3>Step 4 – Fill out <%= link_to "the survey form", :controller => survey, :action => survey_download %></h3>
+<h3>Step 4 – Fill out the survey form</h3>
 <ul>
 	<li>Once you find an invasive plant listed on the survey form record the following information from the plant label and store signage:</li>
 	<ul>
@@ -43,4 +43,14 @@
 
 <h3>Step 5 – Submit your results</h3>
 <ul>
-	<li>Submit results online
+	<li><%= link_to "<strong>Submit results online</strong>" %></li>
+	<li>If you cannot submit the survey online, please submit dirctly to PlantRight:</li>
+	<li><strong>By Mail:</strong> PlantRight, 98 Battery Street, Suite 302, San Francisco CA, 94111</li>
+	<li><strong>By Fax:</strong> (415)977-0381 or scan and email to the address below.</li>
+</ul>
+
+<h3>Step 6 – Submit your photos</h3>
+<ul>
+	<li>Download photos from your camera and save in JPEG format.</li>
+	<li>Label each photo with your name, county, the date, and photo number in the sequence (ie. Smith, Los Angeles 2010-04-23 number 1)</li>
+	<li>Email all photos to <%= mail_to "PlantRight@suscon.org" %>. Please include your name, county, and the date in the subject line (ie. Subject: Smith, Los Angeles 2010-04-23)</li>	

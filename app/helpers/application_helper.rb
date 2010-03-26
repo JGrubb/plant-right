@@ -15,6 +15,6 @@ module ApplicationHelper
 		end
 		ret
 	end
-	
+
 
 end
