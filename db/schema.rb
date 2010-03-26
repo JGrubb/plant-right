@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100324144506) do
+ActiveRecord::Schema.define(:version => 20100326182717) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20100324144506) do
     t.string   "perishable_token",  :default => "",    :null => false
     t.string   "email",             :default => "",    :null => false
     t.string   "county"
-    t.text     "referral"
+    t.boolean  "master_gardener",   :default => false
     t.boolean  "has_passed_quiz",   :default => false
   end
 

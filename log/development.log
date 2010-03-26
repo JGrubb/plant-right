@@ -8689,3 +8689,92 @@ Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 14:16:06) 
 Rendering template within layouts/application
 Rendering survey/participants
 Completed in 101ms (View: 15, DB: 2) | 200 OK [http://localhost/survey/participants]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20081103171327)
+Migrating to CreateSessions (20081106072031)
+Migrating to AddFieldsToUser (20100321181432)
+Migrating to AddAdminAndHasPassedQuizToUser (20100321222606)
+Migrating to CreateQuestions (20100323145121)
+Migrating to CreateAnswers (20100323145209)
+Migrating to AddUsersPasswordResetFields (20100323175033)
+Migrating to AddCountyAndReferralToUser (20100323183925)
+Migrating to AddHasPassedQuizToUsers (20100324144506)
+Migrating to AlteringReferralColumn (20100326182717)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "login" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "current_login_at" datetime, "last_login_ip" varchar(255), "current_login_ip" varchar(255), "first_name" varchar(255), "last_name" varchar(255), "is_admin" boolean DEFAULT 'f', "perishable_token" varchar(255) DEFAULT '' NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "county" varchar(255), "master_gardener" text, "has_passed_quiz" boolean DEFAULT 'f') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_perishable_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_last_request_at')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_persistence_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "temp_index_altered_users_on_email" ON "altered_users" ("email")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "temp_index_altered_users_on_perishable_token" ON "altered_users" ("perishable_token")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "temp_index_altered_users_on_last_request_at" ON "altered_users" ("last_request_at")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "temp_index_altered_users_on_persistence_token" ON "altered_users" ("persistence_token")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "login" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "current_login_at" datetime, "last_login_ip" varchar(255), "current_login_ip" varchar(255), "first_name" varchar(255), "last_name" varchar(255), "is_admin" boolean DEFAULT 'f', "perishable_token" varchar(255) DEFAULT '' NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "county" varchar(255), "master_gardener" text, "has_passed_quiz" boolean DEFAULT 'f') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_users_on_persistence_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_last_request_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_users_on_perishable_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "login" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "current_login_at" datetime, "last_login_ip" varchar(255), "current_login_ip" varchar(255), "first_name" varchar(255), "last_name" varchar(255), "is_admin" boolean DEFAULT 'f', "perishable_token" varchar(255) DEFAULT '' NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "county" varchar(255), "master_gardener" text, "has_passed_quiz" boolean DEFAULT 'f') [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_perishable_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_last_request_at')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_persistence_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "temp_index_altered_users_on_email" ON "altered_users" ("email")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "temp_index_altered_users_on_perishable_token" ON "altered_users" ("perishable_token")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "temp_index_altered_users_on_last_request_at" ON "altered_users" ("last_request_at")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "temp_index_altered_users_on_persistence_token" ON "altered_users" ("persistence_token")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "login" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "last_login_at" datetime, "current_login_at" datetime, "last_login_ip" varchar(255), "current_login_ip" varchar(255), "first_name" varchar(255), "last_name" varchar(255), "is_admin" boolean DEFAULT 'f', "perishable_token" varchar(255) DEFAULT '' NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "county" varchar(255), "master_gardener" boolean DEFAULT 'false', "has_passed_quiz" boolean DEFAULT 'f') [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_users_on_persistence_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_last_request_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_users_on_perishable_token')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_email')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_users_on_persistence_token" ON "users" ("persistence_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_users_on_last_request_at" ON "users" ("last_request_at")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_users_on_perishable_token" ON "users" ("perishable_token")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100326182717')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("answers")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_email')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_perishable_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_last_request_at')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_persistence_token')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
