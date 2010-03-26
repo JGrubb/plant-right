@@ -25,6 +25,10 @@ class UsersController < ApplicationController
     @user = @current_user
   end
   
+  def list
+    :members
+  end
+  
   def update
     @user = @current_user # makes our views "cleaner" and more consistent
     if @user.update_attributes(params[:user])

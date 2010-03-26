@@ -945,3 +945,7 @@ div#content div#sidebar ul li {
 div#content div#sidebar ul li em {
 			color: #666;
 			}
+
+ul.quiz  {
+	list-style-type: none;
+}

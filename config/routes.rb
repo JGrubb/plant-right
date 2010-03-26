@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   
+  #ADMIN ROUTE
+  map.admin "admin", :controller => "user", :action => "list"
+  
 	# QUIZ ROUTES
   map.quiz  "quiz", :controller => "quiz", :action => "index"
   map.grade_quiz "quiz/grade", :controller => "quiz", :action => "grade"

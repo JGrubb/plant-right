@@ -5,9 +5,11 @@ module ApplicationHelper
 		ret = ''
 		questions.each do |key, question|
 			ret += "<p>#{question}</p>"
-			ret += '<ul>'
+			ret += '<ul class="quiz">'
 			choices[key].each do |choice|
-				ret += choice + " " + radio_button_tag("question#{key}", choice)
+			  ret += '<li>'
+				ret += radio_button_tag("question#{key}", choice) + ' ' + choice
+				ret += '</li>'
 			end
 			ret += '</ul>'
 		end
