@@ -10,7 +10,6 @@ ActionController::Routing::Routes.draw do |map|
   
   # SURVEY ROUTES
   map.survey_participants "survey/participants", :controller => "survey", :action => "participants"
-  map.survey_download "survey/downloads", :controller => "survey", :action => "survey_download"
   
   # AUTHENTICATION ROUTES
   map.user_redirect "user_redirect", :controller => "user_sessions", :action => "redirect"

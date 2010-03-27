@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "Account registered!"
-      redirect_back_or_default quiz_url
+      redirect_back_or_default webinar_url
     else
       render :action => :new
     end

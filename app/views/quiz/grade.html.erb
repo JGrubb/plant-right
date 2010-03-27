@@ -1,9 +1,9 @@
 <% if current_user.has_passed_quiz %>
 
-<h1>Hooray, you passed!  Yay for you!</h1>
+<h3>You passed.  <%= link_to "Survey Information.", survey_participants_path %> </h3>
 
 <% else %>
 
-<h1>Sorry Chalie... you should crack the books before you <%= link_to "try again", quiz_path %>.</h1>
+<h3>Sorry Charlie... you should crack the books before you <%= link_to "try again", quiz_path %>.</h3>
 
 <% end %>
