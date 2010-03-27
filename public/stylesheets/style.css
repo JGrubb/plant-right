@@ -949,3 +949,10 @@ div#content div#sidebar ul li em {
 ul.quiz  {
 	list-style-type: none;
 }
+
+input.title {font-size:1.5em;
+	padding: .2em;
+	margin: .2em;
+	margin-left: 0;
+}
+input[type=checkbox], input[type=radio], input.checkbox, input.radio {position:relative;top:.25em;}

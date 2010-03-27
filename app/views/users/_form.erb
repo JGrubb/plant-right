@@ -1,23 +1,23 @@
 <%= form.label :first_name %><br />
-<%= form.text_field :first_name %><br />
+<%= form.text_field :first_name, :class => 'title' %><br />
 <br />
 <%= form.label :last_name %><br />
-<%= form.text_field :last_name %><br />
+<%= form.text_field :last_name, :class => 'title' %><br />
 <br />
 <%= form.label :email %><br />
-<%= form.text_field :email %><br />
+<%= form.text_field :email, :class => 'title' %><br />
 <br />
 <%= form.label :county %><br />
-<%= form.text_field :county %><br />
+<%= form.text_field :county, :class => 'title' %><br />
 <br />
 <%= form.label :master_gardener, "Are you a master gardener?" %> 
 <%= form.check_box :master_gardener %> Yes<br />
 <br />
 <%= form.label :login, "Username" %><br />
-<%= form.text_field :login %><br />
+<%= form.text_field :login, :class => 'title' %><br />
 <br />
 <%= form.label :password, form.object.new_record? ? nil : "Change password" %><br />
-<%= form.password_field :password %><br />
+<%= form.password_field :password, :class => 'title' %><br />
 <br />
 <%= form.label :password_confirmation %><br />
-<%= form.password_field :password_confirmation %><br />
+<%= form.password_field :password_confirmation, :class => 'title' %><br />

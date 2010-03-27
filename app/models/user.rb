@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates_presence_of  :email, :last_name, :first_name, :county,
                         :message => "All fields are required."
 
+  validates_uniqueness_of :username
 
 	# These do the same thing.  Use the named scope in a controller like this: @users = User.members.all
 	named_scope :members, :order => "has_passed_quiz, last_name DESC"

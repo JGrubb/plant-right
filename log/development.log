@@ -1075,3 +1075,414 @@ Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 20:02:33) 
 Rendering template within layouts/application
 Rendering survey/participants
 Completed in 117ms (View: 54, DB: 17) | 200 OK [http://localhost/survey/participants]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-26 22:13:54) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (33.7ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-27 02:13:54', "perishable_token" = 'phFG7LZ_qpBCWC5J3JO5', "last_request_at" = '2010-03-27 02:13:54' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 144ms (DB: 35) | 302 Found [http://localhost/logout]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 22:13:54) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 179ms (View: 177, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 22:13:57) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 23ms (View: 20, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:14:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.7ms)
+Completed in 72ms (View: 44, DB: 0) | 200 OK [http://localhost/account/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-26 22:14:38) [POST]
+  Parameters: {"commit"=>"Register", "action"=>"create", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "county"=>"sussex", "last_name"=>"burtis", "password"=>"[FILTERED]", "login"=>"bob", "master_gardener"=>"1", "email"=>"b@c.com", "first_name"=>"bob"}}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'b@c.com') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'bob') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '7208d4520cea82319557bd4346c2ef640883fda8d0f13711522f6850eeb3502b6102997a161a4503a39318ece3eee9a41013b46b7910aea88063db4e28f86864') LIMIT 1[0m
+  [4;35;1mUser Create (0.6ms)[0m   [0mINSERT INTO "users" ("created_at", "last_request_at", "crypted_password", "updated_at", "perishable_token", "current_login_ip", "county", "password_salt", "current_login_at", "is_admin", "persistence_token", "login_count", "last_name", "last_login_ip", "login", "last_login_at", "master_gardener", "has_passed_quiz", "first_name", "email") VALUES('2010-03-27 02:14:38', '2010-03-27 02:14:38', 'e9b413f46d75734d733d26202eec0b4c62de792ed7806e7825a9fd2fbe318078bcfc38c46e727e66e01e823ddae2f1ff8fe326201e841159053468ce631c5c59', '2010-03-27 02:14:38', 'nZ69XQzlHFo6SpThs1hm', '127.0.0.1', 'sussex', 'p96nt984jPcYMko_jYyF', '2010-03-27 02:14:38', 'f', '7208d4520cea82319557bd4346c2ef640883fda8d0f13711522f6850eeb3502b6102997a161a4503a39318ece3eee9a41013b46b7910aea88063db4e28f86864', 1, 'burtis', NULL, 'bob', NULL, 't', 'f', 'bob', 'b@c.com')[0m
+Redirected to http://localhost:3000/webinar
+Completed in 376ms (DB: 1) | 302 Found [http://localhost/account]
+
+
+Processing QuizController#video (for 127.0.0.1 at 2010-03-26 22:14:38) [GET]
+  Parameters: {"action"=>"video", "controller"=>"quiz"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '7208d4520cea82319557bd4346c2ef640883fda8d0f13711522f6850eeb3502b6102997a161a4503a39318ece3eee9a41013b46b7910aea88063db4e28f86864') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-27 02:14:38', "perishable_token" = 'sHbdpKtXAVe2fwzzAe1Q', "last_request_at" = '2010-03-27 02:14:38' WHERE "id" = 6[0m
+Rendering template within layouts/application
+Rendering quiz/video
+Completed in 79ms (View: 6, DB: 1) | 200 OK [http://localhost/webinar]
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-26 22:14:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '7208d4520cea82319557bd4346c2ef640883fda8d0f13711522f6850eeb3502b6102997a161a4503a39318ece3eee9a41013b46b7910aea88063db4e28f86864') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-27 02:14:54', "perishable_token" = 'nQWl26N82-F9yacdZHIj', "last_request_at" = '2010-03-27 02:14:54' WHERE "id" = 6[0m
+Rendering template within layouts/application
+Rendering quiz/index
+Completed in 454ms (View: 13, DB: 1) | 200 OK [http://localhost/quiz]
+
+
+Processing QuizController#grade (for 127.0.0.1 at 2010-03-26 22:15:10) [POST]
+  Parameters: {"commit"=>"Submit!", "quiz"=>{"0"=>"California", "1"=>"Blocks light and oxygen in waterways", "2"=>"Coniferous forests", "3"=>"True", "4"=>"Regulatory"}, "action"=>"grade", "controller"=>"quiz"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '7208d4520cea82319557bd4346c2ef640883fda8d0f13711522f6850eeb3502b6102997a161a4503a39318ece3eee9a41013b46b7910aea88063db4e28f86864') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-27 02:15:10', "perishable_token" = 'btOzlZTPsbKIrMPmhwpy', "last_request_at" = '2010-03-27 02:15:10' WHERE "id" = 6[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-27 02:15:11', "perishable_token" = 'IKb2LFWZA2FxiVm6Tnzt' WHERE "id" = 6[0m
+Rendering template within layouts/application
+Rendering quiz/grade
+Completed in 398ms (View: 6, DB: 2) | 200 OK [http://localhost/quiz/grade]
+
+
+Processing QuizController#index (for 127.0.0.1 at 2010-03-26 22:15:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"quiz"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '7208d4520cea82319557bd4346c2ef640883fda8d0f13711522f6850eeb3502b6102997a161a4503a39318ece3eee9a41013b46b7910aea88063db4e28f86864') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-27 02:15:19', "perishable_token" = 'XHTgZIoKkMGES-rdO9gM', "last_request_at" = '2010-03-27 02:15:19' WHERE "id" = 6[0m
+Rendering template within layouts/application
+Rendering quiz/index
+Completed in 380ms (View: 12, DB: 1) | 200 OK [http://localhost/quiz]
+
+
+Processing QuizController#grade (for 127.0.0.1 at 2010-03-26 22:15:35) [POST]
+  Parameters: {"commit"=>"Submit!", "quiz"=>{"0"=>"California", "1"=>"Blocks light and oxygen in waterways", "2"=>"River/riparian", "3"=>"False", "4"=>"Voluntary partnership with industry and stakeholders"}, "action"=>"grade", "controller"=>"quiz"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = '7208d4520cea82319557bd4346c2ef640883fda8d0f13711522f6850eeb3502b6102997a161a4503a39318ece3eee9a41013b46b7910aea88063db4e28f86864') LIMIT 1[0m
+  [4;36;1mUser Update (0.5ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-03-27 02:15:35', "perishable_token" = 'aj4yhpQIRE_y8chtvURL', "last_request_at" = '2010-03-27 02:15:35' WHERE "id" = 6[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-27 02:15:35', "perishable_token" = 'lgtViqdPwYSrA2WgxUiT', "has_passed_quiz" = 't' WHERE "id" = 6[0m
+Rendering template within layouts/application
+Rendering quiz/grade
+Completed in 400ms (View: 8, DB: 2) | 200 OK [http://localhost/quiz/grade]
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 22:15:38) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '7208d4520cea82319557bd4346c2ef640883fda8d0f13711522f6850eeb3502b6102997a161a4503a39318ece3eee9a41013b46b7910aea88063db4e28f86864') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-27 02:15:38', "perishable_token" = 'RodCI17RvdL-EydnxGkG', "last_request_at" = '2010-03-27 02:15:38' WHERE "id" = 6[0m
+Rendering template within layouts/application
+Rendering survey/participants
+Completed in 389ms (View: 6, DB: 1) | 200 OK [http://localhost/survey/participants]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 22:16:37) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '7208d4520cea82319557bd4346c2ef640883fda8d0f13711522f6850eeb3502b6102997a161a4503a39318ece3eee9a41013b46b7910aea88063db4e28f86864') LIMIT 1[0m
+  [4;35;1mUser Update (136.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-27 02:16:37', "perishable_token" = 'UV0LsjdJCzbljI9ABrWU', "last_request_at" = '2010-03-27 02:16:37' WHERE "id" = 6[0m
+Completed in 244ms (View: 105, DB: 137) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-26 22:16:45) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = '7208d4520cea82319557bd4346c2ef640883fda8d0f13711522f6850eeb3502b6102997a161a4503a39318ece3eee9a41013b46b7910aea88063db4e28f86864') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-27 02:16:45', "perishable_token" = 'O6uisjIDdquxuWPtP-yE', "last_request_at" = '2010-03-27 02:16:45' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/
+Completed in 274ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 22:16:46) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 24ms (View: 20, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 22:16:49) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 19ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:32:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.9ms)
+Completed in 60ms (View: 15, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:41:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.6ms)
+Completed in 97ms (View: 17, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:42:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.7ms)
+Completed in 28ms (View: 12, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:42:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.9ms)
+Completed in 28ms (View: 13, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:43:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.8ms)
+Completed in 27ms (View: 13, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:43:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.6ms)
+Completed in 26ms (View: 12, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:43:26) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.9ms)
+Completed in 29ms (View: 13, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:44:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.0ms)
+Completed in 40ms (View: 27, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:44:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.5ms)
+Completed in 27ms (View: 12, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:45:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.0ms)
+Completed in 29ms (View: 13, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:45:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (3.8ms)
+Completed in 27ms (View: 12, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:47:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+SyntaxError (/Users/grubb/WORK/plant-right/app/models/user.rb:4: syntax error, unexpected tASSOC, expecting kEND
+                        :message => "All fields are required."
+                                   ^
+/Users/grubb/WORK/plant-right/app/models/user.rb:7: syntax error, unexpected tASSOC, expecting kEND
+...                   :message => "That username isn't availabl...
+                              ^):
+  authlogic (2.1.3) lib/authlogic/session/klass.rb:33:in `klass'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:90:in `login_field'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:213:in `login_field'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:118:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/activation.rb:48:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/klass.rb:64:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/scopes.rb:79:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/persistence.rb:37:in `new'
+  authlogic (2.1.3) lib/authlogic/session/persistence.rb:37:in `find'
+  app/controllers/application_controller.rb:12:in `current_user_session'
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:30:in `require_no_user'
+
+Rendered rescues/_trace (153.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:48:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+SyntaxError (/Users/grubb/WORK/plant-right/app/models/user.rb:4: syntax error, unexpected tASSOC, expecting kEND
+                        :message => "All fields are required."
+                                   ^):
+  authlogic (2.1.3) lib/authlogic/session/klass.rb:33:in `klass'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:90:in `login_field'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:213:in `login_field'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:118:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/activation.rb:48:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/klass.rb:64:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/scopes.rb:79:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/persistence.rb:37:in `new'
+  authlogic (2.1.3) lib/authlogic/session/persistence.rb:37:in `find'
+  app/controllers/application_controller.rb:12:in `current_user_session'
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:30:in `require_no_user'
+
+Rendered rescues/_trace (43.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:48:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+SyntaxError (/Users/grubb/WORK/plant-right/app/models/user.rb:4: syntax error, unexpected tASSOC, expecting kEND
+                        :message => "All fields are required."
+                                   ^):
+  authlogic (2.1.3) lib/authlogic/session/klass.rb:33:in `klass'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:90:in `login_field'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:213:in `login_field'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:118:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/activation.rb:48:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/klass.rb:64:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/scopes.rb:79:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/persistence.rb:37:in `new'
+  authlogic (2.1.3) lib/authlogic/session/persistence.rb:37:in `find'
+  app/controllers/application_controller.rb:12:in `current_user_session'
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:30:in `require_no_user'
+
+Rendered rescues/_trace (134.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:48:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+SyntaxError (/Users/grubb/WORK/plant-right/app/models/user.rb:4: syntax error, unexpected tASSOC, expecting kEND
+                        :message => "All fields are required."
+                                   ^):
+  authlogic (2.1.3) lib/authlogic/session/klass.rb:33:in `klass'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:90:in `login_field'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:213:in `login_field'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:118:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/activation.rb:48:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/klass.rb:64:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/scopes.rb:79:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/persistence.rb:37:in `new'
+  authlogic (2.1.3) lib/authlogic/session/persistence.rb:37:in `find'
+  app/controllers/application_controller.rb:12:in `current_user_session'
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:30:in `require_no_user'
+
+Rendered rescues/_trace (47.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:48:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+SyntaxError (/Users/grubb/WORK/plant-right/app/models/user.rb:4: syntax error, unexpected tASSOC, expecting kEND
+                        :message => "All fields are required."
+                                   ^):
+  authlogic (2.1.3) lib/authlogic/session/klass.rb:33:in `klass'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:90:in `login_field'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:213:in `login_field'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:118:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/activation.rb:48:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/klass.rb:64:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/scopes.rb:79:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/persistence.rb:37:in `new'
+  authlogic (2.1.3) lib/authlogic/session/persistence.rb:37:in `find'
+  app/controllers/application_controller.rb:12:in `current_user_session'
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:30:in `require_no_user'
+
+Rendered rescues/_trace (146.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:48:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+
+SyntaxError (/Users/grubb/WORK/plant-right/app/models/user.rb:4: syntax error, unexpected tASSOC, expecting kEND
+                        :message => "All fields are required."
+                                   ^):
+  authlogic (2.1.3) lib/authlogic/session/klass.rb:33:in `klass'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:90:in `login_field'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:213:in `login_field'
+  authlogic (2.1.3) lib/authlogic/session/password.rb:118:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/activation.rb:48:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/klass.rb:64:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/scopes.rb:79:in `initialize'
+  authlogic (2.1.3) lib/authlogic/session/persistence.rb:37:in `new'
+  authlogic (2.1.3) lib/authlogic/session/persistence.rb:37:in `find'
+  app/controllers/application_controller.rb:12:in `current_user_session'
+  app/controllers/application_controller.rb:17:in `current_user'
+  app/controllers/application_controller.rb:30:in `require_no_user'
+
+Rendered rescues/_trace (44.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-26 22:48:41) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.2ms)
+Completed in 506ms (View: 14, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-26 22:57:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 43ms (View: 8, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-26 22:58:06) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"jgrubb"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'jgrubb') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "login_count" = 54, "updated_at" = '2010-03-27 02:58:06', "perishable_token" = 'IojPWE_dCAlpS9By2TKk', "last_request_at" = '2010-03-27 02:58:06', "last_login_at" = '2010-03-26 23:48:14', "current_login_at" = '2010-03-27 02:58:06' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/user_redirect
+Completed in 423ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#redirect (for 127.0.0.1 at 2010-03-26 22:58:06) [GET]
+  Parameters: {"action"=>"redirect", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-27 02:58:06', "perishable_token" = 'Wd9w5bZMqNGZWbbcX3Ku', "last_request_at" = '2010-03-27 02:58:06' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/survey/participants
+Completed in 27ms (DB: 1) | 302 Found [http://localhost/user_redirect]
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 22:58:06) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-27 02:58:06', "perishable_token" = 'xreRfbputOjUVjTpKvUE', "last_request_at" = '2010-03-27 02:58:06' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering survey/participants
+Completed in 490ms (View: 16, DB: 1) | 200 OK [http://localhost/survey/participants]
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 22:58:41) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-27 02:58:41', "perishable_token" = 'AgnTEJJwW1HTmEdPa1d6', "last_request_at" = '2010-03-27 02:58:41' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering survey/participants
+Completed in 403ms (View: 17, DB: 1) | 200 OK [http://localhost/survey/participants]
