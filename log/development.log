@@ -1486,3 +1486,130 @@ Processing SurveyController#participants (for 127.0.0.1 at 2010-03-26 22:58:41) 
 Rendering template within layouts/application
 Rendering survey/participants
 Completed in 403ms (View: 17, DB: 1) | 200 OK [http://localhost/survey/participants]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-03-26 23:48:33) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-27 03:48:33', "perishable_token" = 'BJHp6Lz-xkYMTQH6FXUy', "last_request_at" = '2010-03-27 03:48:33' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/
+Completed in 196ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-26 23:48:33) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 46ms (View: 44, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-27 11:03:48) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 95ms (View: 92, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-27 11:12:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.3ms)
+Completed in 37ms (View: 22, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-29 10:52:37) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 162ms (View: 159, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-29 10:52:41) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (4.9ms)
+Completed in 39ms (View: 23, DB: 0) | 200 OK [http://localhost/register]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-29 10:52:46) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 82ms (View: 80, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-29 10:52:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+
+ActionView::TemplateError (undefined method `semantic_form_for' for #<ActionView::Base:0x1036638a8>) on line #3 of app/views/user_sessions/new.html.erb:
+1: <h1>Login</h1>
+2: 
+3: <% semantic_form_for @user_session, :url => user_session_path do |f| %>
+4:   <%= f.error_messages %>
+5:   <%= f.label :login %><br />
+6:   <%= f.text_field :login %><br />
+
+    app/views/user_sessions/new.html.erb:3
+
+Rendered rescues/_trace (40.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-29 10:54:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 93ms (View: 11, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-29 10:54:19) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+Completed in 18ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-03-29 10:54:20) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 20ms (View: 7, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-03-29 10:54:26) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"jgrubb"}, "action"=>"create", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (10.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".login) = 'jgrubb') LIMIT 1[0m
+  [4;35;1mUser Update (29.3ms)[0m   [0mUPDATE "users" SET "login_count" = 55, "updated_at" = '2010-03-29 14:54:27', "perishable_token" = 'P-w4i1kairwgoo3leQuB', "last_request_at" = '2010-03-29 14:54:27', "last_login_at" = '2010-03-27 02:58:06', "current_login_at" = '2010-03-29 14:54:27' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/user_redirect
+Completed in 1117ms (DB: 40) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#redirect (for 127.0.0.1 at 2010-03-29 10:54:27) [GET]
+  Parameters: {"action"=>"redirect", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-29 14:54:27', "perishable_token" = 'LeRr7HtQCXfPDCZZOcwF', "last_request_at" = '2010-03-29 14:54:27' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/survey/participants
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/user_redirect]
+
+
+Processing SurveyController#participants (for 127.0.0.1 at 2010-03-29 10:54:27) [GET]
+  Parameters: {"action"=>"participants", "controller"=>"survey"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-29 14:54:27', "perishable_token" = '3YYNDWoKcYjhu0NI98Nc', "last_request_at" = '2010-03-29 14:54:27' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering survey/participants
+Completed in 39ms (View: 13, DB: 1) | 200 OK [http://localhost/survey/participants]
+
+
+Processing SurveyController#intro (for 127.0.0.1 at 2010-03-29 12:00:48) [GET]
+  Parameters: {"action"=>"intro", "controller"=>"survey"}
+Rendering template within layouts/application
+Rendering survey/intro
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-03-29 16:00:48', "perishable_token" = 'dcOff_G1vV2NjagbMT9Z', "last_request_at" = '2010-03-29 16:00:48' WHERE "id" = 1[0m
+Completed in 149ms (View: 145, DB: 3) | 200 OK [http://localhost/]
